@@ -44,8 +44,6 @@ class core_base extends \phpbb_database_test_case
 	{
 		global $config, $phpbb_dispatcher, $user, $cache;
 
-		
-	
 		/*$sql = 'DELETE FROM phpbb_config;';
 		$sql .= 'DELETE FROM phpbb_gallery_albums;';
 		$sql .= 'DELETE FROM phpbb_gallery_comments;';
