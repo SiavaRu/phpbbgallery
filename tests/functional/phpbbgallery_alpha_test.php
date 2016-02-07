@@ -415,7 +415,7 @@ class phpbbgallery_alpha_test extends phpbbgallery_base
 		
 		$form = $crawler->selectButton($this->lang('CONTINUE'))->form();
 		
-		$form['files[]'] =  __DIR__ . '/images/valid.jpg';;
+		$form['files'] = array(__DIR__ . '/images/valid.jpg');
 		$crawler = self::submit($form);
 		
 		$this->assertContainsLang('UPLOAD_IMAGE', $crawler->text());
@@ -460,7 +460,7 @@ class phpbbgallery_alpha_test extends phpbbgallery_base
 		
 		$form = $crawler->selectButton($this->lang('CONTINUE'))->form();
 		
-		$form['files[]'] =  array(__DIR__ . '/images/valid.jpg', __DIR__ . '/images/valid.jpg');
+		$form['files'] =  array(__DIR__ . '/images/valid.jpg', __DIR__ . '/images/valid.jpg');
 		$crawler = self::submit($form);
 		
 		$this->assertContainsLang('UPLOAD_IMAGE', $crawler->text());
