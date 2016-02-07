@@ -37,9 +37,14 @@
 
 <h2><a href="{U_VIEW_ALBUM}">{ALBUM_NAME}</a></h2>
 
-<form id="postform" action="{S_ALBUM_ACTION}" method="post" enctype="multipart/form-data">
-
-<div class="panel" id="postingbox">
+<form id="postform" action="{S_ALBUM_ACTION}" method="post" enctype="multipart/form-data" data-url="{S_ALBUM_ACTION}">
+<div class="panel" id="postingbox" style="position: relative;">
+<div id="covverall" data-url="{S_ALBUM_ACTION}">
+	<div class="dropzone">
+		<span>{L_GALLERY_DROP}</span>
+	</div>
+</div>
+<div>
 	<div class="inner"><span class="corners-top"><span></span></span>
 		<h3>{L_UPLOAD_IMAGE}</h3>
 		<fieldset class="fields1">
@@ -73,6 +78,10 @@
 				<dd>{S_ALLOWED_FILETYPES}</dd>
 			</dl>
 			<hr />
+			<dl id="upload_field">
+				<dt><label for="image_file_{upload_image.S_ROW_COUNT}">{L_IMAGES}:</label></dt>
+				<dd><input class="inputbox autowidth" type="file" name="files[]" id="files" size="52" multiple class="dz-hidden-input"/></dd>
+			</dl>
 			<!-- BEGIN upload_image -->
 				<dl id="upload_field_{upload_image.S_ROW_COUNT}">
 					<dt><label for="image_file_{upload_image.S_ROW_COUNT}">{L_FILE}:</label></dt>
@@ -114,7 +123,20 @@
 		{S_FORM_TOKEN}
 	<span class="corners-bottom"><span></span></span></div>
 </div>
+</div>
 </form>
+<div id="outputTarget" class="panel bg2 hidden">
+	<div class="inner">
+		<span class="corners-top"><span></span></span>
+			<div class="meter">
+				<span style="width: 0%"><p>0%</p></span>
+			</div>
+			<div class="containUploads">
+			</div>
+		<span class="corners-bottom"><span></span></span>
+		</div>
+</div>
+
 <!-- ELSE -->
 
 <!-- INCLUDE gallery/posting_javascript.html -->
