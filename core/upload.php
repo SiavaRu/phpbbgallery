@@ -37,6 +37,7 @@ class upload
 	public $images = array();
 	public $image_data = array();
 	public $array_id2row = array();
+	public $error_prefix = '';
 	private $album_id = 0;
 	private $file_count = 0;
 	private $image_num = 0;
